@@ -4,6 +4,8 @@
 namespace App\Tenant;
 
 use App\Models\Tenant;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class ManagerTenant{
 
@@ -28,4 +30,16 @@ class ManagerTenant{
         return  $subdominio ==  $auxSubDominio;
     }
 
+    public function setConexao(Tenant $tenant){
+     //   dd( $tenant);
+        DB::purge('tenant');
+            config()->set('database.connections.tenant.host',$tenant->db_hostname);
+            config()->set('database.connections.tenant.database',$tenant->db_database);
+            config()->set('database.connections.tenant.username',$tenant->db_username);
+            config()->set('database.connections.tenant.password',$tenant->db_password);
+        DB::reconnect('tenant');
+       // dd($connq);
+       Schema::connection('tenant')->getConnection()->reconnect();
+
+    }
 }

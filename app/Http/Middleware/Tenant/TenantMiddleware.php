@@ -19,11 +19,27 @@ class TenantMiddleware
          $urlTenant =  app(ManagerTenant::class);
          $tenant = $urlTenant->tenant();
 
-         if(!$tenant && $request->url()!=route('tenant.404') ){
+
+        if(!$tenant && $request->url()!=route('tenant.404')  ){
              return redirect()->route('tenant.404');
          }
          if($tenant){
             $this->setSession($tenant->only(['nome','status','dados_cadastrais','sistema_info','uuid']));
+            if($tenant['tipo']){
+                //banco de dados compartinhado
+                if(!$urlTenant->isDominioPrinicipal()){
+                    $urlTenant->setConexao($tenant);
+                }
+              // dd($tenant );
+            }else{
+                // bancod de dados separado
+                if(!$urlTenant->isDominioPrinicipal()){
+                    $urlTenant->setConexao($tenant);
+                }
+
+
+            }
+
          }
 
         return $next($request);

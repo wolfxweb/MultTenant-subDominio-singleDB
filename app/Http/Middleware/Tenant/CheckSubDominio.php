@@ -17,7 +17,7 @@ class CheckSubDominio{
     public function handle(Request $request, Closure $next)
     {
         $tenant = app(ManagerTenant::class);
-      //  dd($tenant->isDominioPrinicipal());
+   //    dd($tenant->isDominioPrinicipal());
         if(!$tenant->isDominioPrinicipal()){
             abort(401);
             return;

@@ -34,7 +34,7 @@
                               <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                             @endtenant
                             @tenantAdm()
-                                <a href="{{ route('cadastro') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Cadastre-se</a>
+                                <a href="{{ route('cadastro-empresa') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Cadastre-se</a>
                             @endtenantAdm
                          @endif
 

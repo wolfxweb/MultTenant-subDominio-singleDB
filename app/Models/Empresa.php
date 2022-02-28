@@ -13,7 +13,7 @@ class Empresa extends Model
     use HasFactory;
     use TenantTrait;
 
-    protected $fillable=['nome','status','user_id','tenant_id'];
+    protected $fillable=['nome','status','user_id ','tenant_id'];
 
 
 
