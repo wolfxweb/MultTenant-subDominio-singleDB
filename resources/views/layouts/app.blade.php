@@ -14,11 +14,19 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <!--
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Hubballi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.es.gov.br/scripts/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+<script src="https://cdn.es.gov.br/scripts/jquery/jquery-mask/1.7.7/jquery.mask.min.js"></script>
     @livewireStyles
+
 </head>
 <body>
     <div id="app">
@@ -26,7 +34,11 @@
         <main class="py-4">
             @yield('content')
         </main>
-        @livewireScripts
+
     </div>
+
+      @livewireScripts
+      @yield('scripts')
+      @livewire('menu-canvas')
 </body>
 </html>

@@ -28,7 +28,7 @@ class CreateTenantsTable extends Migration
             $table->string('logo')->nullable();
             $table->string('rasao_social')->nullable();
             $table->string('cnpj')->nullable();
-            $table->string('inscricao_estaduall')->nullable();
+            $table->string('inscricao_estadual')->nullable();
             $table->string('inscricao_municipal')->nullable();
             $table->string('telefone_fixo')->nullable();
             $table->string('telefone_celular')->nullable();

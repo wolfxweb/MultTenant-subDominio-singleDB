@@ -42,36 +42,36 @@ class TenantMigrations extends Command
      */
     public function handle()
     {
-       // dd($this->argument('id'));
-
-        if($this->argument('id')){
+        //  dd($this->argument('id'));
+        if ($this->argument('id') != 0) {
             $migrateTenant = Tenant::find($this->argument('id'));
-
-            if( $migrateTenant){
+            
+            // dd($migrateTenant);
+            if ($this->argument('id') == 0) {
                 $this->excMigrate($migrateTenant);
             }
-
+            if ($migrateTenant) {
+                $this->excMigrate($migrateTenant);
+            }
         }
         $tenants = Tenant::all();
-        foreach($tenants as $tenant){
+        foreach ($tenants as $tenant) {
             $this->excMigrate($tenant);
-            $this->info(" empresa {$tenant->nome}" );
+            $this->info(" empresa {$tenant->nome}");
         }
-
     }
 
-    public function excMigrate(Tenant $tenant){
-        $comando = $this->option('refresh')?'migrate:refresh': 'migrate';
-        if(!$tenant->tipo){
-            $this->info(" empresa {$tenant->tipo}" );
+    public function excMigrate(Tenant $tenant)
+    {
+        $comando = $this->option('refresh') ? 'migrate:refresh' : 'migrate';
+        if ($tenant->tipo) {
+            $this->info(" empresa {$tenant->tipo}");
             $this->tenant->setConexao($tenant);
-            Artisan::call(  $comando ,[
-                    '--force'=>true,
-                    '--path'=>'/database/migrations/tenant',
+            Artisan::call($comando, [
+                '--force' => true,
+                '--path' => '/database/migrations/tenant',
 
             ]);
         }
     }
-
-
 }

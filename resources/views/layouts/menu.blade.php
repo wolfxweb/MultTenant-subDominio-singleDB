@@ -36,6 +36,7 @@
 
                     @endif
                 @else
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -53,8 +54,11 @@
                             </form>
                         </div>
                     </li>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span class="material-icons">menu</span></button>
+
                 @endguest
             </ul>
         </div>
     </div>
+
 </nav>
