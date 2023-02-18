@@ -3,13 +3,15 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::resource('empresa','App\Http\Controllers\EmpresaController');
-
-Route::view('tenant-404', 'erros.404-tenant')->name('tenant.404');
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('empresa','App\Http\Controllers\EmpresaController');
+
+//Route::view('tenant-404', 'erros.404-tenant')->name('tenant.404');
+
+
 
 Auth::routes();
 
