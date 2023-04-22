@@ -21,4 +21,9 @@ Route::get('/cadastre-se', function () {return view('empresa.cadastro-empresa');
 Route::get('/cadastre-se/sucesso', function () {return view('empresa.cadastro-empresa-sucesso');})->name('cadastro-empresa-sucesso');
 
 Route::get('/modal', function () {return view('components.modalAlert');})->name('cadastro-empresa-sucesso');
+Route::get('/modal', function () {return view('components.modalAlert');})->name('cadastro-empresa-sucesso');
+
+/** rotas da angedamento */
+Route::get('/agenda', function () {return view('empresa.agenda');})->name('agenda');
+Route::get('/agenda-cadastro', function () {return view('empresa.agenda-cadastro');})->name('agenda-cadastro');
 

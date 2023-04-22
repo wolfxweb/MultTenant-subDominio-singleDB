@@ -37,6 +37,27 @@ class MenuItens
 
         ];
     }
+
+    public static function configInputAgenda()
+    {
+        return [
+            'agendamento' => [
+                'titulo' => 'Agendamentos',
+                'apelido-rota' => 'agenda',
+                'icone' => 'format_list_bulleted',
+                'rota' => '',
+
+            ],
+            'agendamento-cadastro' => [
+                'titulo' => 'Agendamento cadastro',
+                'apelido-rota' => 'agenda-cadastro',
+                'icone' => 'format_list_bulleted',
+                'rota' => '',
+
+            ],
+
+        ];
+    }
     public static function configColunaTabela()
     {
         return [

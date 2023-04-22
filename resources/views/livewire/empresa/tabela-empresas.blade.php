@@ -9,7 +9,7 @@ $MenuItensColunaTabela = MenuItens::configColunaTabela();
 
 
 <div>
-    @component('components.card', ['classeCol' => 'col-md-12 ', 'classeHeader' => 'card-header bg-primary text-white',
+    @component('components.card', ['classeCol' => 'col-md-12 ', 'classeHeader' => 'card-header bg-secondary text-white',
         'titulo' => 'Empresas'])
         <div class="btn-group" role="group" aria-label="Basic example">
             <a href="{{ route('cadastro-empresa') }}" class="btn btn-primary"> {{__('Cadastrar')}}</a>

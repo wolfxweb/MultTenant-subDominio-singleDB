@@ -15,11 +15,11 @@
    @if ($msgAlert)
 
          @component('components.card', ['titulo' => 'Cadastro Realizado com sucesso', 'classeCol' => 'col-md-12 ', 'classeHeader' =>'card-title p-2 text-white bg-success'])
-            <h3> Seja bem vindo</h3>
+            <h3>__(Seja bem vindo)</h3>
             <hr>
-            <h6>  Voce pode acessar o sistema pelo endereço copiando e colando está urla no seu navegador <strong> http://{{$subdominio}}.localhost:8000/login </strong> , ou pelo botão abaixo. </h6>
-            <p> O login e senha de acesso é o que mesmo   que foi criado no mometo do cadastro.</p>
-            <a class="btn btn-primary" href="http://{{$subdominio}}.localhost:8000/login" role="button" target="_blank">Acessar o sistema</a>
+            <h6> __(Voce pode acessar o sistema pelo endereço copiando e colando está urla no seu navegador) <strong> http://{{$subdominio}}.localhost:8000/login </strong> , ou pelo botão abaixo. </h6>
+            <p> __(O login e senha de acesso é o que mesmo   que foi criado no mometo do cadastro).</p>
+            <a class="btn btn-primary" href="http://{{$subdominio}}.localhost:8000/login" role="button" target="_blank">__(Acessar o sistema)</a>
          @endcomponent
    @endif
    @if (!$msgAlert)

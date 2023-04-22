@@ -34,9 +34,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-
     </div>
-
       @livewireScripts
       @yield('scripts')
       @livewire('menu-canvas')
