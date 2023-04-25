@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\Empresa\Agendas;
+use App\Http\Livewire\Empresa\Agenda;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +25,6 @@ Route::get('/modal', function () {return view('components.modalAlert');})->name(
 Route::get('/modal', function () {return view('components.modalAlert');})->name('cadastro-empresa-sucesso');
 
 /** rotas da angedamento */
-Route::get('/agenda',Agendas::class )->name('agenda');
+Route::get('/agenda',Agenda::class )->name('agenda');
 Route::get('/agenda-cadastro', function () {return view('empresa.agenda-cadastro');})->name('agenda-cadastro');
 

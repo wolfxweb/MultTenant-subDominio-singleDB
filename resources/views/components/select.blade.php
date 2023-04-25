@@ -1,5 +1,5 @@
 <div id="{{$idSelect}}" class="form-floating  {{ isset($classe) ? $classe : 'col-md-12' }} p-1">
-    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+    <select wire:model="{{ $wireNome??'' }}" class="form-select"  aria-label="Floating label select example">
      <!-- adicianar os item  do select no slot -->
         {{$slot??''}}
     </select>

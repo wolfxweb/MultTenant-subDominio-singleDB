@@ -46,37 +46,35 @@
                                                 </div>
                                                 <form class="row g-3 " wire:submit.prevent="create">
                                                     <div class="col-md-6">
-                                                        @component('components.select',['idSelect'=>'usuario-select','classe'=>'','label'=>'Selecione um usuario'])
-                                                        <option selected>{{ __('Selecione um usuário') }}</option>
-                                                        @foreach ($usuarios as $usuario)
-                                                            <option value="{{ $usuario->id }}">{{ $usuario->name }}
-                                                            </option>
-                                                        @endforeach 
-                                                        @endcomponent
-                                                    
-                              
-                                                        <select name="user_id" id="inputState form-floating"
-                                                            class="form-select">
-                                                            <option selected>{{ __('Selecione um usuário') }}</option>
-                                                            @foreach ($usuarios as $usuario)
-                                                                <option value="{{ $usuario->id }}">{{ $usuario->name }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
+                                                        <div>
+                                                            <input wire:model="message" type="text">
+                                                         
+                                                            <h1>{{ $message }}</h1>
+                                                        </div>
+                                                
+                                                    <select wire:model="usuario_selecionado" class="form-select">
+                                                        <option value="" >Open this select menu</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                      </select>
+                                                      {{$usuario_selecionado}}
+                                                      @error('usuario_selecionado') {{$usuario_selecionado}} @enderror"
                                                     </div>
                                                     <div class="col-md-6">
+                                                        @component('components.select',['idSelect'=>'usuario-select','classe'=>'','label'=>'Selecione um usuario','wireNome'=>'diaSemana'])
+                                                        <option value="7" >{{ __('Selecione dia da semana') }}</option>
+                                                        <option value="1">Segunda</option>
+                                                        <option value="2">Treça feira</option>
+                                                        <option value="3">Quarta feira</option>
+                                                        <option value="4">Quinta feira</option>
+                                                        <option value="5">Sexta feira</option>
+                                                        <option value="6">Sabado</option>
+                                                        <option value="0">Domingo</option>
+                                                          
+                                                        @endcomponent
+                                                        {{$diaSemana}}
 
-                                                        <select name="dia_semana" id="inputState form-floating"
-                                                            class="form-select">
-                                                            <option selected>{{ __('Selecione dia da semana') }}</option>
-                                                            <option value="1">Segunda</option>
-                                                            <option value="2">Treça feira</option>
-                                                            <option value="3">Quarta feira</option>
-                                                            <option value="4">Quinta feira</option>
-                                                            <option value="5">Sexta feira</option>
-                                                            <option value="6">Sabado</option>
-                                                            <option value="0">Domingo</option>
-                                                        </select>
                                                     </div>
                                                     <div class="col-md-6">
                                                    
@@ -85,11 +83,9 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         @include('components.input',['wireNome'=>'horaFinal','label'=>'Hora de inicio','idInput'=>'horario-final','classe'=>'', 'type'=>'time'])
-                                                   
-                                                        <input wire:model="horaFinal" name="horario-fim" class="form-control" id="disabledInput"
-                                                            type="time">
+
                                                     </div>
-                                                    {{$horaFinal}}
+                                                    <button type="submit" class="btn btn-dark">Dark</button> 
                                                     <div class="col-md-12 flex-row-reverse">
                                                         <button type="button" onclick="adicionarHorario()"
                                                             class="btn btn-success float-end">{{ __('Adicionar horario') }}</button>

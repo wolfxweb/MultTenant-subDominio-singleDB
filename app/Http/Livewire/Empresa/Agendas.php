@@ -7,15 +7,16 @@ use App\Traits\TenantTrait;
 use Livewire\Component;
 
 
-class Agendas extends Component
-{
+class Agendas extends Component{
    
-    public $usuario;
-    public $diaSemana;
-    public $horaInicial;
-    public $horaFinal ="opa";
+    use TenantTrait; 
+   
+    public $message;
+    public $usuario_selecionado;
+    public $diaSemana ='7';
+    public $horaInicial = '';
+    public $horaFinal ='';
 
-    use TenantTrait;
     public function render()
     {
         $tenant = $this->getTenantId();
